@@ -4,4 +4,4 @@ const div = document.createElement('div')
 
 document.body.appendChild(div)
 
-div.className = componentBCss['footer-content']
+div.className = componentBCss.footerContent
