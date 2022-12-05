@@ -6,7 +6,7 @@
 // import './variable.css';
 // import './componentA'
 // import './componentB'
-// import './src/imageLoader'
+import './src/imageLoader'
 // import json from './src/assets/json/index.json'
 // import { name } from './src/assets/json/index.json'
 // import './src/svgLoader'
