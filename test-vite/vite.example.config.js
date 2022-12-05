@@ -4,7 +4,7 @@ import { defineConfig } from 'vite'
 
 export default defineConfig({
     optimizeDeps: {
-        exclude: ['lodash-es'], // 不进行依赖预构建
+        exclude: ['lodash-es'] // 不进行依赖预构建
     },
     envPrefix: 'ENV_', // 配置VITE注入客户端变量的前缀
     css: {
@@ -39,6 +39,7 @@ export default defineConfig({
             }
         },
         devSourcemap: true, // 开启css的sourceMap（文件索引）
+        postcss: {} // 这里写的配置会覆盖 postcss.config.js
     }
 })
 

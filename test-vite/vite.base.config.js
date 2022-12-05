@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite'
+import path from 'path'
 
 export default defineConfig({
     envPrefix: 'ENV_', // 配置VITE注入客户端变量的前缀,
@@ -9,7 +10,7 @@ export default defineConfig({
             // 是对css模块化的默认行为进行覆盖
             localsConvention: 'camelCase', // 修改生成的配置对象的key的展示形式(驼峰还是中划线形式)
             scopeBehaviour: 'local', // 配置当前的模块化行为是模块化还是全局化 (有hash就是开启了模块化的一个标志, 因为他可以保证产生不同的hash值来控制我们的样式类名不被覆盖)
-            generateScopedName: '[name]_[local]_[hash:5]',
+            generateScopedName: '[name]_[local]_[hash:5]'
             // generateScopedName: (name, filename, css) => {
             //     // name -> 代表的是你此刻css文件中的类名
             //     // filename -> 是你当前css文件的绝对路径
@@ -34,5 +35,12 @@ export default defineConfig({
             }
         },
         devSourcemap: true, // 开启css的sourceMap（文件索引）
+        postcss: {} // 这里写的配置会覆盖 postcss.config.js
+    },
+    resolve: {
+        alias: {
+            '@': path.resolve(__dirname, './src'),
+            '@assets': path.resolve(__dirname, './src/assets')
+        }
     }
 })

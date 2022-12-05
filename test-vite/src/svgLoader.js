@@ -1,4 +1,5 @@
-import svgIcon from './assets/svgs/fullScreen.svg'
+// import svgIcon from './assets/svgs/fullScreen.svg'
+import svgIcon from '@assets/svgs/fullScreen.svg'
 // import svgRaw from './assets/svgs/fullScreen.svg?raw'
 
 // 第一种使用svg的方式
