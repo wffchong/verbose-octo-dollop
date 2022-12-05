@@ -3,6 +3,7 @@
 // import lodashEs from 'lodash-es'
 // import './request'
 // import './index.css'
+import './variable.css';
 import './componentA'
 import './componentB'
 

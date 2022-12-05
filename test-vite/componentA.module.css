@@ -5,7 +5,7 @@
 }
 
 .footer-content {
-    width: 200px;
+    width: clamp(200px, 50%, 200px);
     height: 200px;
-    background-color: blue;
+    background-color: var(--globalColor);
 }

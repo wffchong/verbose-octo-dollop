@@ -19,7 +19,7 @@ export default defineConfig({
             //     return `${name}_${Math.random().toString(36).substr(3, 8)}`
             // },
             // hashPrefix: "hello", // 生成hash会根据类名 + 一些其他的字符串(文件名 + 他内部随机生成一个字符串)去进行生成, 如果想要生成hash更加的独特一点, 可以配置hashPrefix, 配置的这个字符串会参与到最终的hash生成, （hash: 只要字符串有一个字不一样, 那么生成的hash就完全不一样, 但是只要字符串完全一样, 生成的hash就会一样）
-            globalModulePaths: ['./componentB.module.css'] // 代表不想参与到css模块化的路径
+            // globalModulePaths: ['./componentB.module.css'] // 代表不想参与到css模块化的路径
         },
         preprocessorOptions: {
             // key + config key代表预处理器的名
