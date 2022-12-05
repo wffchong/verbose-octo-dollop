@@ -1,4 +1,7 @@
 import { defineConfig } from 'vite'
+import { ViteAliases } from './node_modules/vite-aliases'
+// import { ViteAliases } from 'vite-aliases'
+
 
 // 这里保存的时学习的时候的一些配置
 
@@ -59,7 +62,8 @@ export default defineConfig({
             assetsInlineLimit: 4096, // 默认为 4kb，4kb以下的会被打包成base64
             outDir: 'dist', // 默认为 dist
             assetsDir: 'static' // 默认为 assets
-        }
+        },
+        plugins: [ViteAliases()]
     }
 })
 

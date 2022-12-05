@@ -1,5 +1,8 @@
 import { defineConfig } from 'vite'
-import path from 'path'
+// import path from 'path'
+import { ViteAliases } from './node_modules/vite-aliases'
+// import { ViteAliases } from 'vite-aliases'
+
 
 export default defineConfig({
     envPrefix: 'ENV_', // 配置VITE注入客户端变量的前缀,
@@ -37,12 +40,12 @@ export default defineConfig({
         devSourcemap: true, // 开启css的sourceMap（文件索引）
         postcss: {} // 这里写的配置会覆盖 postcss.config.js
     },
-    resolve: {
-        alias: {
-            '@': path.resolve(__dirname, './src'),
-            '@assets': path.resolve(__dirname, './src/assets')
-        }
-    },
+    // resolve: {
+    //     alias: {
+    //         '@': path.resolve(__dirname, './src'),
+    //         '@assets': path.resolve(__dirname, './src/assets')
+    //     }
+    // },
     base: './', // 配置打包后为相对路径
     build: {
         rollupOptions: {
@@ -56,5 +59,6 @@ export default defineConfig({
         assetsInlineLimit: 4096, // 默认为 4kb，4kb以下的会被打包成base64
         outDir: 'dist', // 默认为 dist
         assetsDir: 'static' // 默认为 assets
-    }
+    },
+    plugins: [ViteAliases()]
 })
