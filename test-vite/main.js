@@ -10,7 +10,7 @@ import './src/imageLoader'
 // import json from './src/assets/json/index.json'
 // import { name } from './src/assets/json/index.json'
 // import './src/svgLoader'
-import '@/svgLoader'
+import './src/svgLoader'
 
 // console.log(name)
 

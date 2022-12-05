@@ -2,7 +2,7 @@ import { defineConfig } from 'vite'
 // import path from 'path'
 import { ViteAliases } from './node_modules/vite-aliases'
 // import { ViteAliases } from 'vite-aliases'
-
+import MyViteAliases from './plugins/ViteAliases.cjs'
 
 export default defineConfig({
     envPrefix: 'ENV_', // 配置VITE注入客户端变量的前缀,
@@ -60,5 +60,10 @@ export default defineConfig({
         outDir: 'dist', // 默认为 dist
         assetsDir: 'static' // 默认为 assets
     },
-    plugins: [ViteAliases()]
+    plugins: [
+        // ViteAliases(),
+        MyViteAliases({
+            keyName: '@'
+        })
+    ]
 })
