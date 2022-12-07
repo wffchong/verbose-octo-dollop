@@ -1,0 +1,17 @@
+{
+    "name": "vite-typescript",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "build:ts": "tsc --noEmit && vite build"
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "typescript": "^4.9.3",
+        "vite": "^3.2.5",
+        "vite-plugin-checker": "^0.5.1"
+    }
+}
