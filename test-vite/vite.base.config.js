@@ -5,6 +5,8 @@ import { defineConfig } from 'vite'
 import MyViteAliases from './plugins/MyViteAliases.cjs'
 // import { createHtmlPlugin } from 'vite-plugin-html'
 import MyCreateHtml from './plugins/MyCreateHtml.cjs'
+import { viteMockServe } from 'vite-plugin-mock'
+import MyMock from './plugins/MyMock.cjs'
 
 export default defineConfig({
     envPrefix: 'ENV_', // 配置VITE注入客户端变量的前缀,
@@ -80,6 +82,12 @@ export default defineConfig({
                     title: '主页'
                 }
             }
+        }),
+        // viteMockServe({
+        //     mockPath: 'mock'
+        // }),
+        MyMock({
+            mockPath: 'mock'
         })
     ]
 })
