@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 import { ViteAliases } from './node_modules/vite-aliases'
 // import { ViteAliases } from 'vite-aliases'
-
+import { createHtmlPlugin } from 'vite-plugin-html'
 
 // 这里保存的时学习的时候的一些配置
 
@@ -63,7 +63,16 @@ export default defineConfig({
             outDir: 'dist', // 默认为 dist
             assetsDir: 'static' // 默认为 assets
         },
-        plugins: [ViteAliases()]
+        plugins: [
+            ViteAliases(),
+            createHtmlPlugin({
+                inject: {
+                    data: {
+                        title: '主页'
+                    }
+                }
+            })
+        ]
     }
 })
 

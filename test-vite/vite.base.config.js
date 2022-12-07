@@ -1,8 +1,10 @@
 import { defineConfig } from 'vite'
 // import path from 'path'
-import { ViteAliases } from './node_modules/vite-aliases'
+// import { ViteAliases } from './node_modules/vite-aliases'
 // import { ViteAliases } from 'vite-aliases'
-import MyViteAliases from './plugins/ViteAliases.cjs'
+import MyViteAliases from './plugins/MyViteAliases.cjs'
+// import { createHtmlPlugin } from 'vite-plugin-html'
+import MyCreateHtml from './plugins/MyCreateHtml.cjs'
 
 export default defineConfig({
     envPrefix: 'ENV_', // 配置VITE注入客户端变量的前缀,
@@ -64,6 +66,20 @@ export default defineConfig({
         // ViteAliases(),
         MyViteAliases({
             keyName: '@'
+        }),
+        // createHtmlPlugin({
+        //     inject: {
+        //         data: {
+        //             title: '主页'
+        //         }
+        //     }
+        // }),
+        MyCreateHtml({
+            inject: {
+                data: {
+                    title: '主页'
+                }
+            }
         })
     ]
 })
