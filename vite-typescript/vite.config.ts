@@ -6,5 +6,18 @@ export default defineConfig({
         checker({
             typescript: true
         })
-    ]
+    ],
+    build: {
+        minify: false,
+        rollupOptions: {
+            output: {
+                manualChunks: (id: string) => {
+                    console.log(id)
+                    if (id.includes('node_modules')) {
+                        return 'vendor'
+                    }
+                }
+            }
+        }
+    }
 })
