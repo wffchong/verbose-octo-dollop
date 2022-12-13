@@ -7,7 +7,8 @@ import MyViteAliases from './plugins/MyViteAliases.cjs'
 import MyCreateHtml from './plugins/MyCreateHtml.cjs'
 import { viteMockServe } from 'vite-plugin-mock'
 import MyMock from './plugins/MyMock.cjs'
-import viteCompression from 'vite-plugin-compression';
+import viteCompression from 'vite-plugin-compression'
+import importToCDN from 'vite-plugin-cdn-import'
 
 export default defineConfig({
     envPrefix: 'ENV_', // 配置VITE注入客户端变量的前缀,
@@ -90,6 +91,15 @@ export default defineConfig({
         MyMock({
             mockPath: 'mock'
         }),
-        viteCompression()
+        viteCompression(),
+        importToCDN({
+            modules: [
+                {
+                    name: 'lodash',
+                    var: '_',
+                    path: `https://cdn.bootcdn.net/ajax/libs/lodash.js/4.17.21/lodash.core.js`
+                }
+            ]
+        })
     ]
 })

@@ -1,5 +1,5 @@
 // import { num } from './counter.js'
-// import _ from 'lodash'
+import _ from 'lodash'
 // import lodashEs from 'lodash-es'
 // import './request'
 // import './index.css'
@@ -16,7 +16,7 @@ import './src/svgLoader'
 // console.log(name)
 
 // console.log(num)
-// console.log(_)
+console.log(_)
 // console.log(lodashEs)
 
 axios.post('/api/users')
