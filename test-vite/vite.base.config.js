@@ -7,6 +7,7 @@ import MyViteAliases from './plugins/MyViteAliases.cjs'
 import MyCreateHtml from './plugins/MyCreateHtml.cjs'
 import { viteMockServe } from 'vite-plugin-mock'
 import MyMock from './plugins/MyMock.cjs'
+import viteCompression from 'vite-plugin-compression';
 
 export default defineConfig({
     envPrefix: 'ENV_', // 配置VITE注入客户端变量的前缀,
@@ -88,6 +89,7 @@ export default defineConfig({
         // }),
         MyMock({
             mockPath: 'mock'
-        })
+        }),
+        viteCompression()
     ]
 })
